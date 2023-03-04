@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
     private Rigidbody rb;
+    public bool isTouched = false;
 
     private bool isGrounded = true;
 
@@ -29,14 +30,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.CompareTag("Ground"))
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle"))
         {
+            //Stop the obstacle
+            Rigidbody otherRb = other.GetComponent<Rigidbody>();
+            if (otherRb != null)
+            {
+                otherRb.isKinematic = true;
+            }
+
+            isTouched = true;
             Debug.Log("You lose, i guess");
         }
     }

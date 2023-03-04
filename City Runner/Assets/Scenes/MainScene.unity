@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.16, z: -5.46}
+  m_LocalPosition: {x: 0, y: 4.92, z: -8.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,7 +427,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037960816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -446,7 +446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 6
+  isTouched: 0
 --- !u!54 &1037960820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -458,7 +459,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
@@ -475,7 +476,7 @@ GameObject:
   - component: {fileID: 1804715690}
   m_Layer: 0
   m_Name: Obstacle Spawner
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,8 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c99eac446a2a6d4086eb0266f3f733a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab1: {fileID: 746615500891168729, guid: ae02ffe1da38aa34bb382b3d9eb12bb9, type: 3}
-  obstaclePrefab2: {fileID: 9170068889555568693, guid: e32cc44a4732bcf42a3493ee842fa00a, type: 3}
+  obstaclePrefabA: {fileID: 746615500891168729, guid: ae02ffe1da38aa34bb382b3d9eb12bb9, type: 3}
+  obstaclePrefabB: {fileID: 9170068889555568693, guid: e32cc44a4732bcf42a3493ee842fa00a, type: 3}
+  playerInfo: {fileID: 1037960819}
 --- !u!4 &1804715691
 Transform:
   m_ObjectHideFlags: 0

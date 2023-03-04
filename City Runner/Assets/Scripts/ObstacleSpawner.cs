@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class ObstacleSpawner : MonoBehaviour
     private float timeSinceLastIncrease = 0f;
     private float timeSinceLastSpawn = 0f;
     private float spawnInterval = 2f;
+    public GameObject playerObject;
+    private bool Ongoing = true;
 
     public ObstacleSpawner()
     {
@@ -25,20 +29,26 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        // Spawn obstacle prefab
-        timeSinceLastSpawn += Time.deltaTime;
-        if (timeSinceLastSpawn >= spawnInterval)
-        {
-            timeSinceLastSpawn -= spawnInterval;
-            SpawnObstacle();
-        }
+        PlayerController playerInfo = playerObject.GetComponent<PlayerController>();
 
-        // Increase obstacle speed
-        timeSinceLastIncrease += Time.deltaTime;
-        if (timeSinceLastIncrease >= speedIncreaseInterval)
-        {
-            timeSinceLastIncrease = 0;
-            speed += 2f;
+        if(playerInfo.isTouched == false){Ongoing = true;}else Ongoing = false;
+
+        if(Ongoing == true){
+            // Spawn obstacle prefab
+            timeSinceLastSpawn += Time.deltaTime;
+            if (timeSinceLastSpawn >= spawnInterval)
+            {
+                timeSinceLastSpawn -= spawnInterval;
+                SpawnObstacle();  
+            }
+
+            // Increase obstacle speed
+            timeSinceLastIncrease += Time.deltaTime;
+            if (timeSinceLastIncrease >= speedIncreaseInterval)
+            {
+                timeSinceLastIncrease = 0;
+                speed += 2f;
+            }
         }
     }
 
@@ -77,5 +87,7 @@ public class ObstacleSpawner : MonoBehaviour
         Destroy(obstacle1, 5f);
         Destroy(obstacle2, 5f);
     }
+
+    
 
 }
