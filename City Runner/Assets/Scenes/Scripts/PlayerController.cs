@@ -2,28 +2,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10f; // movement speed of the player
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 5f;
+    private Rigidbody rb;
 
-    private float horizontalInput; // input from horizontal axis
-    private Rigidbody playerRb; // rigidbody of the player
+    private bool isGrounded = true;
 
     private void Start()
     {
-        // get the rigidbody component
-        playerRb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        // get input from horizontal axis
-        horizontalInput = Input.GetAxis("Horizontal");
+        rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        // move the player left or right based on the horizontal input
-        Vector3 movement = new Vector3(horizontalInput * moveSpeed * Time.fixedDeltaTime, 0f, 0f);
-        playerRb.MovePosition(transform.position + movement);
+        float xInput = Input.GetAxis("Horizontal");
+        Vector3 movement = new Vector3(xInput * moveSpeed, rb.velocity.y, 0f);
+        rb.velocity = movement;
     }
 
     private void Update()
@@ -43,3 +37,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+

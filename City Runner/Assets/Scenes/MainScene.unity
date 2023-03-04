@@ -445,7 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d1e65953c1ce44b8cd8f562700a5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
+  jumpForce: 5
 --- !u!54 &1037960820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 124
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &1892264430
 GameObject:
@@ -476,7 +477,7 @@ GameObject:
   - component: {fileID: 1892264431}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
