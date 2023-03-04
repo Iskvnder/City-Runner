@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("You lose, i guess");
+        }
     }
 }
 

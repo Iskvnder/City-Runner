@@ -1,8 +1,8 @@
 using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab1;
-    public GameObject obstaclePrefab2;
+    public GameObject obstaclePrefabA;
+    public GameObject obstaclePrefabB;
 
     private Vector3[] positions;
     private Vector3 firstPos;
@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
     private Vector3 thirdPos;
 
     private float speed = 5f;
-    private float speedIncreaseInterval = 60f;
+    private float speedIncreaseInterval = 20f;
     private float timeSinceLastIncrease = 0f;
     private float timeSinceLastSpawn = 0f;
     private float spawnInterval = 2f;
@@ -37,33 +37,45 @@ public class ObstacleSpawner : MonoBehaviour
         timeSinceLastIncrease += Time.deltaTime;
         if (timeSinceLastIncrease >= speedIncreaseInterval)
         {
-            timeSinceLastIncrease -= speedIncreaseInterval;
-            speed += 1f;
+            timeSinceLastIncrease = 0;
+            speed += 2f;
         }
     }
 
     void SpawnObstacle()
     {
-        // Choose random position to spawn
-        int randomPosIndex = Random.Range(0, positions.Length);
-        Vector3 spawnPos = positions[randomPosIndex];
+        // Choose two random positions to spawn obstacles
+        int randomPosIndex1 = Random.Range(0, positions.Length);
+        int randomPosIndex2 = (randomPosIndex1 + 1) % positions.Length; // Ensures the two positions are different
+        Vector3 spawnPos1 = positions[randomPosIndex1];
+        Vector3 spawnPos2 = positions[randomPosIndex2];
 
-        // Choose random obstacle prefab to spawn
-        GameObject obstaclePrefab;
+        // Choose random obstacle prefabs to spawn
+        GameObject obstaclePrefab1;
+        GameObject obstaclePrefab2;
+
         if (Random.value < 0.5f)
         {
-            obstaclePrefab = obstaclePrefab1;
+            obstaclePrefab1 = obstaclePrefabA;
+            obstaclePrefab2 = obstaclePrefabB;
         }
         else
         {
-            obstaclePrefab = obstaclePrefab2;
+            obstaclePrefab1 = obstaclePrefabB;
+            obstaclePrefab2 = obstaclePrefabA;
         }
 
-        // Spawn obstacle prefab
-        GameObject obstacle = Instantiate(obstaclePrefab, spawnPos, Quaternion.identity);
-        obstacle.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -speed);
+        // Spawn obstacle prefabs
+        GameObject obstacle1 = Instantiate(obstaclePrefab1, spawnPos1, Quaternion.identity);
+        GameObject obstacle2 = Instantiate(obstaclePrefab2, spawnPos2, Quaternion.identity);
 
-        // Destroy obstacle after 5 seconds
-        Destroy(obstacle, 5f);
+        // Set the velocity of the obstacles
+        obstacle1.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -speed);
+        obstacle2.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -speed);
+
+        // Destroy the obstacles after 5 seconds
+        Destroy(obstacle1, 5f);
+        Destroy(obstacle2, 5f);
     }
+
 }
