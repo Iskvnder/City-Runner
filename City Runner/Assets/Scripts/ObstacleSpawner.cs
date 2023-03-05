@@ -30,7 +30,10 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
     public string timeTracker(){
-        if(onGoing == true){time = Time.time;}
+        if(onGoing == true){
+            MenuController menuInfo = menuObject.GetComponent<MenuController>();
+            time = Time.time - menuInfo.inMenuTime;
+            }
             int minutes = Mathf.FloorToInt(time / 60f);
             int seconds = Mathf.FloorToInt(time % 60f);
             string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);

@@ -6,9 +6,10 @@ public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
     public bool isGameStarted = false;
-
+    public float inMenuTime;
 
     public void startButton(){
+        inMenuTime = Time.time;
         isGameStarted = true;
         menuCanvas.SetActive(false);
     }
