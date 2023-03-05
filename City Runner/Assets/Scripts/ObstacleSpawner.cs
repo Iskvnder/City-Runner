@@ -15,36 +15,35 @@ public class ObstacleSpawner : MonoBehaviour
     private float speedIncreaseInterval = 20f;
     private float timeSinceLastIncrease = 0f;
     private float timeSinceLastSpawn = 0f;
-    private float spawnInterval = 2f;
+    private float spawnInterval = 5f;
     public GameObject playerObject;
     public GameObject menuObject;
     private bool onGoing = true;
     public float time;
-
+    
     public ObstacleSpawner()
     {
-        firstPos = new Vector3(3f, 0f, 18f);
-        secondPos = new Vector3(0f, 0f, 18f);
-        thirdPos = new Vector3(-3f, 0f, 18f);
+        firstPos = new Vector3(3f, 0.3f, 36f);
+        secondPos = new Vector3(0f, 0.3f, 36f);
+        thirdPos = new Vector3(-3f, 0.3f, 36f);
         positions = new Vector3[] { firstPos, secondPos, thirdPos };
     }
 
     public string timeTracker(){
+        MenuController menuInfo = menuObject.GetComponent<MenuController>();
         if(onGoing == true){
-            MenuController menuInfo = menuObject.GetComponent<MenuController>();
             time = Time.time - menuInfo.inMenuTime;
             }
             int minutes = Mathf.FloorToInt(time / 60f);
             int seconds = Mathf.FloorToInt(time % 60f);
             string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
-            Debug.Log(formattedTime);
             return formattedTime;
     }
 
     void onGoingCheck(){
 
-        MenuController menuInfo = menuObject.GetComponent<MenuController>();
         PlayerController playerInfo = playerObject.GetComponent<PlayerController>();
+        MenuController menuInfo = menuObject.GetComponent<MenuController>();
 
         if(playerInfo.isTouched == false && menuInfo.isGameStarted == true)
             {
@@ -56,10 +55,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     }
 
-
     void Update()
-    {
-        
+    {   
         onGoingCheck();
         timeTracker();
 
@@ -114,10 +111,8 @@ public class ObstacleSpawner : MonoBehaviour
         obstacle2.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -speed);
 
         // Destroy the obstacles after 5 seconds
-        Destroy(obstacle1, 5f);
-        Destroy(obstacle2, 5f);
+        Destroy(obstacle1, 10f);
+        Destroy(obstacle2, 10f);
     }
-
     
-
 }

@@ -3,6 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1befbc65-c44f-8076-6d3b-374ad2d7701e}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyPlayerMe", "ReadyPlayerMe.csproj", "{c9610d49-39ac-44ef-5de3-21b680a35d16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siccity.GLTFUtility", "Siccity.GLTFUtility.csproj", "{e44ddebe-9b39-06b5-5c10-4220480d869e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebView", "WebView.csproj", "{5173b88a-50ca-71da-fb89-d1b249911911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyPlayerMe.Editor", "ReadyPlayerMe.Editor.csproj", "{5759cde8-cb46-889b-1e96-a58d2a85fe42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siccity.GLTFUtility.Editor", "Siccity.GLTFUtility.Editor.csproj", "{d9cc3fd5-030d-6281-281d-afe89030a90a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadyPlayerMe.Extras.Editor", "ReadyPlayerMe.Extras.Editor.csproj", "{3b1d4848-1b5a-a34c-8e15-51c4b1522978}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,6 +22,18 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1befbc65-c44f-8076-6d3b-374ad2d7701e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1befbc65-c44f-8076-6d3b-374ad2d7701e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c9610d49-39ac-44ef-5de3-21b680a35d16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c9610d49-39ac-44ef-5de3-21b680a35d16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e44ddebe-9b39-06b5-5c10-4220480d869e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e44ddebe-9b39-06b5-5c10-4220480d869e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5173b88a-50ca-71da-fb89-d1b249911911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5173b88a-50ca-71da-fb89-d1b249911911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5759cde8-cb46-889b-1e96-a58d2a85fe42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5759cde8-cb46-889b-1e96-a58d2a85fe42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{d9cc3fd5-030d-6281-281d-afe89030a90a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{d9cc3fd5-030d-6281-281d-afe89030a90a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3b1d4848-1b5a-a34c-8e15-51c4b1522978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3b1d4848-1b5a-a34c-8e15-51c4b1522978}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

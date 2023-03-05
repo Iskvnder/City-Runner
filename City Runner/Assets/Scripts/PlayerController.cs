@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
     private Rigidbody rb;
-    public bool isTouched = false;
+    public bool isTouched = true;
 
     private bool isGrounded = true;
 
@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
             }
 
             isTouched = true;
-            Debug.Log("You lose, i guess");
         }
     }
 }
