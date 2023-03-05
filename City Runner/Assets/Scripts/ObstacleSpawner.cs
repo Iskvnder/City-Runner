@@ -19,6 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject playerObject;
     public GameObject menuObject;
     private bool onGoing = true;
+    public float time;
 
     public ObstacleSpawner()
     {
@@ -26,6 +27,15 @@ public class ObstacleSpawner : MonoBehaviour
         secondPos = new Vector3(0f, 0f, 18f);
         thirdPos = new Vector3(-3f, 0f, 18f);
         positions = new Vector3[] { firstPos, secondPos, thirdPos };
+    }
+
+    public string timeTracker(){
+        if(onGoing == true){time = Time.time;}
+            int minutes = Mathf.FloorToInt(time / 60f);
+            int seconds = Mathf.FloorToInt(time % 60f);
+            string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+            Debug.Log(formattedTime);
+            return formattedTime;
     }
 
     void onGoingCheck(){
@@ -37,7 +47,7 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 onGoing = true;
             }
-            else onGoing = false;
+            else {onGoing = false;}
 
     }
 
@@ -46,6 +56,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         
         onGoingCheck();
+        timeTracker();
 
         if(onGoing == true){
             // Spawn obstacle prefab

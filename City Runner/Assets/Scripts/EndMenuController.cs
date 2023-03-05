@@ -1,18 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class EndMenuController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    
+    public GameObject playerObject;
+    public GameObject endMenuCanvas;
+    public GameObject spawnObject;
+    private bool onGoing = true;
+    public TextMeshProUGUI resultText;
+    
+    void Start(){
+        endMenuCanvas.SetActive(false);
+    }
+    void Update(){
+
+        onGoingCheck();
+        gameOver();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    void onGoingCheck(){
+
+        PlayerController playerInfo = playerObject.GetComponent<PlayerController>();
+        ObstacleSpawner spawnInfo = spawnObject.GetComponent<ObstacleSpawner>();
+
+        if(playerInfo.isTouched == false)
+            {
+                onGoing = true;
+            }
+            else {onGoing = false; resultText.text = spawnInfo.timeTracker();}
+
+    }
+
+    void gameOver(){
+        if(onGoing == false){
+            endMenuCanvas.SetActive(true);
+        }
+    }
+
+
+    public void restartButton(){
+        SceneManager.LoadScene(0);
+    }
+
+    public void exitButton(){
+        Application.Quit();
     }
 }
