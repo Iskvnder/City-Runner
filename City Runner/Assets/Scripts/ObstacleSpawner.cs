@@ -11,11 +11,11 @@ public class ObstacleSpawner : MonoBehaviour
     private Vector3 secondPos;
     private Vector3 thirdPos;
 
-    private float speed = 5f;
+    private float speed = 15f;
     private float speedIncreaseInterval = 20f;
     private float timeSinceLastIncrease = 0f;
     private float timeSinceLastSpawn = 0f;
-    private float spawnInterval = 5f;
+    private float spawnInterval = 2.2f;
     public GameObject playerObject;
     public GameObject menuObject;
     private bool onGoing = true;

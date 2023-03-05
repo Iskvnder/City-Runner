@@ -43,6 +43,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
      <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -77,7 +78,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Models\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
@@ -732,9 +732,6 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -746,9 +743,6 @@
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -768,8 +762,8 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    <Reference Include="Unity.Postprocessing.Editor">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -780,14 +774,11 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -798,14 +789,23 @@
     <Reference Include="Unity.TerrainTools">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TerrainTools.Editor">
         <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    <Reference Include="Unity.Timeline.Editor">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+        <HintPath>D:\Unity Projects\City-Runner\City Runner\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -825,13 +825,13 @@
       <Project>{5173b88a-50ca-71da-fb89-d1b249911911}</Project>
       <Name>WebView</Name>
     </ProjectReference>
-    <ProjectReference Include="ReadyPlayerMe.Extras.Editor.csproj">
-      <Project>{3b1d4848-1b5a-a34c-8e15-51c4b1522978}</Project>
-      <Name>ReadyPlayerMe.Extras.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="ReadyPlayerMe.Editor.csproj">
       <Project>{5759cde8-cb46-889b-1e96-a58d2a85fe42}</Project>
       <Name>ReadyPlayerMe.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="ReadyPlayerMe.Extras.Editor.csproj">
+      <Project>{3b1d4848-1b5a-a34c-8e15-51c4b1522978}</Project>
+      <Name>ReadyPlayerMe.Extras.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

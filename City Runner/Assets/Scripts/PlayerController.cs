@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
     private Rigidbody rb;
-    public bool isTouched = true;
+    public bool isTouched = false;
 
     private bool isGrounded = true;
 
@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // {
+        //     rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //     isGrounded = false;
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
