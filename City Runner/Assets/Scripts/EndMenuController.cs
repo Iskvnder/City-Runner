@@ -33,7 +33,12 @@ public class EndMenuController : MonoBehaviour
             {
                 onGoing = true;
             }
-            else {onGoing = false; resultText.text = spawnInfo.timeTracker();}
+            else {
+                onGoing = false; 
+                resultText.text = spawnInfo.timeTracker();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                }
 
     }
 

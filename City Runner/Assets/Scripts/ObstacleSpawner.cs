@@ -49,6 +49,8 @@ public class ObstacleSpawner : MonoBehaviour
         if(playerInfo.isTouched == false && menuInfo.isGameStarted == true)
             {
                 onGoing = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else {onGoing = false;}
 
