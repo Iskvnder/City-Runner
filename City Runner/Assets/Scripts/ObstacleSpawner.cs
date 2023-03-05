@@ -17,7 +17,8 @@ public class ObstacleSpawner : MonoBehaviour
     private float timeSinceLastSpawn = 0f;
     private float spawnInterval = 2f;
     public GameObject playerObject;
-    private bool Ongoing = true;
+    public GameObject menuObject;
+    private bool onGoing = true;
 
     public ObstacleSpawner()
     {
@@ -27,13 +28,26 @@ public class ObstacleSpawner : MonoBehaviour
         positions = new Vector3[] { firstPos, secondPos, thirdPos };
     }
 
-    void Update()
-    {
+    void onGoingCheck(){
+
+        MenuController menuInfo = menuObject.GetComponent<MenuController>();
         PlayerController playerInfo = playerObject.GetComponent<PlayerController>();
 
-        if(playerInfo.isTouched == false){Ongoing = true;}else Ongoing = false;
+        if(playerInfo.isTouched == false && menuInfo.isGameStarted == true)
+            {
+                onGoing = true;
+            }
+            else onGoing = false;
 
-        if(Ongoing == true){
+    }
+
+
+    void Update()
+    {
+        
+        onGoingCheck();
+
+        if(onGoing == true){
             // Spawn obstacle prefab
             timeSinceLastSpawn += Time.deltaTime;
             if (timeSinceLastSpawn >= spawnInterval)
